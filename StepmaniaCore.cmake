@@ -341,6 +341,8 @@ elseif(LINUX OR BSD)
   if (NOT OPENGL_GLU_FOUND)  # it's an optional component of OpenGL, but we use it for glew build
     message(FATAL_ERROR "libglu was not found")
   endif()
+  link_libraries(${SM_EXTERN_DIR}/discord-rpc-2.0.1/lib/libdiscord-rpc.a)
+  include_directories(${SM_EXTERN_DIR}/discord-rpc-2.0.1/include)
 
   find_package(udev REQUIRED)
 endif(WIN32) # LINUX OR BSD, APPLE
